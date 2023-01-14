@@ -107,7 +107,6 @@ img {
 
 .button:hover {
     scale: 1.25;
-    /* box-shadow: #ffffff80 2px 2px 10px; */
 }
 
 .button:active {

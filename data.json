@@ -1,0 +1,38 @@
+{
+    "hackathons": {
+        "attended": [
+            {
+                "name": "See You Later, Hackulator 2",
+                "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/002/333/237/datas/large.png",
+                "type": "virtual",
+                "dates": {
+                    "from": "December 30, 2022 EST",
+                    "to": "January 1, 2023 EST"
+                },
+                "project": {
+                    "name": "Happy Meal Year",
+                    "link": "https://devpost.com/software/happy-meal-year"
+                },
+                "awards": [
+                    "First Place"
+                ]
+            }
+        ],
+        "on_radar": [
+            {
+                "name": "HackBeanpot 2023",
+                "image": "https://hackbeanpot.com/static/hackbeanpot-logo-white-90edd03f410359ac56b57fd26c90d956.svg",
+                "type": "in-person",
+                "dates": {
+                    "from": "February 10, 2023 EST",
+                    "to": "February 12, 2023 EST"
+                }
+            }
+        ]
+    },
+    "statistics": {
+        "won": 1,
+        "attended": 1,
+        "project_submitted": 1
+    }
+}

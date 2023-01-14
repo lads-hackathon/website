@@ -8,6 +8,7 @@ const goodColors = [
 const scrollThreshold = 10;
 let slide = 0;
 let scrollToNextIntent = 0;
+let startTouch;
 
 function pluralize(count, word) {
     return count === 1 ? word : word + 's';
@@ -134,8 +135,24 @@ function onCleanup() {
     document.removeEventListener('close', onCleanup);
     document.removeEventListener('wheel', onScroll);
     document.removeEventListener('resize', onResize);
+    document.removeEventListener('dragstart', onDragStart);
 }
 
+function onTouchStart(event) {
+    startTouch = event['changedTouches'][0]['clientY'];
+}
+
+function onTouchEnd(event) {
+    let diff = event['changedTouches'][0]['clientY'] - startTouch;
+
+    scrollToNextIntent = scrollThreshold * diff;
+    onScroll({
+        'wheelDeltaY': diff
+    });
+}
+
+document.addEventListener('touchstart', onTouchStart);
+document.addEventListener('touchend', onTouchEnd);
 document.addEventListener('resize', onResize);
 document.addEventListener('wheel', onScroll)
 document.addEventListener('DOMContentLoaded', onMount);

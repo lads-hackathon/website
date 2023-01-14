@@ -6,25 +6,8 @@ const goodColors = [
     '#2d98da'
 ];
 const scrollThreshold = 10;
-let tickAurorasInterval;
 let slide = 0;
 let scrollToNextIntent = 0;
-
-function tickAurora() {
-    // let mainPointX = Math.random();
-    // let mainPointY = Math.random();
-
-    // for (let child of AURORA.childNodes) {
-    //     if (Math.random() > 0.2) continue;
-        
-    //     child.style.top = `${Math.random() * 100}%`;
-    //     child.style.left = `${Math.random() * 100}%`;
-    //     child.style.width = `${Math.random() * 100}%`;
-    //     child.style.height = `${Math.random() * 100}%`;
-    //     child.style.opacity = Math.random() * 0.4;
-    //     child.style.background = goodColors[Math.floor(Math.random() * goodColors.length)];
-    // }
-}
 
 function pluralize(count, word) {
     return count === 1 ? word : word + 's';
@@ -96,11 +79,8 @@ function onMount() {
         AURORA.appendChild(bubble);
     }
 
-    // Tick auroras
-    tickAurorasInterval = setInterval(tickAurora, 200);
-
     // Update data
-    fetch('/data.json').then(r => r.json()).then(renderWithData);
+    fetch('data.json').then(r => r.json()).then(renderWithData);
 
     // Update scroll position
     slide = document.querySelector('main').scrollTop / window.innerHeight;
@@ -150,8 +130,6 @@ function onResize() {
 }
 
 function onCleanup() {
-    clearInterval(tickAurorasInterval);
-
     // Remove event listener
     document.removeEventListener('close', onCleanup);
     document.removeEventListener('wheel', onScroll);

@@ -22,11 +22,18 @@ function renderWithData(data) {
         attendedContainer.appendChild(createHackathonCard(hackathon));
     }
 
-    // Won hackathons
+    // On Radar hackathons
     const radarContainer = document.querySelector('.radar-container');
     
-    for (let hackathon of data['hackathons']['on_radar']) {
-        radarContainer.appendChild(createHackathonCard(hackathon));
+    if (data['hackathons']['on_radar'].length === 0) {
+        let h2 = document.createElement("h2");
+        h2.textContent = "Nothing to see right now";
+
+        radarContainer.appendChild(h2);
+    } else {
+        for (let hackathon of data['hackathons']['on_radar']) {
+            radarContainer.appendChild(createHackathonCard(hackathon));
+        }
     }
 
     // Stats
@@ -49,10 +56,11 @@ function createHackathonCard(hackathon) {
     let name = document.createElement('h3');
 
     image.src = hackathon['image'];
+    image.classList.add('hackathon-logo')
     name.textContent = hackathon['name'];
 
-    container.appendChild(image);
     container.appendChild(name);
+    container.appendChild(image);
 
     // Unique elements
     if (hackathon['project'] !== undefined && hackathon['awards'] !== undefined) {
@@ -90,37 +98,6 @@ function onMount() {
     document.removeEventListener('DOMContentLoaded', onMount);
 }
 
-function onScroll(event) {
-    if (scrollToNextIntent !== 0 && Math.sign(event.wheelDeltaY) !== Math.sign(scrollToNextIntent)) {
-        scrollToNextIntent = 0;
-    }
-
-    if (event.wheelDeltaY > 0) {
-        scrollToNextIntent += 1;
-    } else if (0 > event.wheelDeltaY) {
-        scrollToNextIntent -= 1;
-    }
-
-    if (scrollToNextIntent > scrollThreshold) {
-        scrollToNextIntent = 0;
-        slide--;
-    } else if (-scrollThreshold > scrollToNextIntent) {
-        scrollToNextIntent = 0;
-            slide++;
-        }
-
-    if (slide !== 0) {
-        AURORA.classList.add('hidden');
-    } else {
-        AURORA.classList.remove('hidden');
-    }
-
-    document.querySelector('main').scrollTo({
-        behavior: 'smooth',
-        top: window.innerHeight * slide
-    });
-}
-
 function onResize() {
     slide = document.querySelector('main').scrollTop / window.innerHeight;
 
@@ -154,7 +131,6 @@ function onTouchEnd(event) {
 document.addEventListener('touchstart', onTouchStart);
 document.addEventListener('touchend', onTouchEnd);
 document.addEventListener('resize', onResize);
-document.addEventListener('wheel', onScroll)
 document.addEventListener('DOMContentLoaded', onMount);
 document.addEventListener('close', onCleanup);
 

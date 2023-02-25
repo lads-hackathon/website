@@ -16,23 +16,27 @@
                 "awards": [
                     "First Place"
                 ]
+            },
+            {
+                "name": "WhiskerHacks",
+                "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/002/395/945/datas/large.png",
+                "type": "virtual",
+                "dates": {
+                    "from": "February 24, 2023 EST",
+                    "to": "February 26, 2023 EST"
+                },
+                "project": {
+                    "name": "Pet Finder",
+                    "link": "https://devpost.com/software/pet-finder-vh2y30"
+                },
+                "awards": []
             }
         ],
-        "on_radar": [
-            {
-                "name": "HackBeanpot 2023",
-                "image": "https://hackbeanpot.com/static/hackbeanpot-logo-white-90edd03f410359ac56b57fd26c90d956.svg",
-                "type": "in-person",
-                "dates": {
-                    "from": "February 10, 2023 EST",
-                    "to": "February 12, 2023 EST"
-                }
-            }
-        ]
+        "on_radar": []
     },
     "statistics": {
         "won": 1,
-        "attended": 1,
-        "project_submitted": 1
+        "attended": 2,
+        "project_submitted": 2
     }
 }

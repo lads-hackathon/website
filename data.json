@@ -2,19 +2,19 @@
     "hackathons": {
         "attended": [
             {
-                "name": "See You Later, Hackulator 2",
-                "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/002/333/237/datas/large.png",
-                "type": "virtual",
+                "name": "Hack@BUA 2023",
+                "image": "https://hackatbua.vercel.app/logo.jpg",
+                "type": "phyiscal",
                 "dates": {
-                    "from": "December 30, 2022 EST",
-                    "to": "January 1, 2023 EST"
+                    "from": "April 2, 2023 EST",
+                    "to": "April 2, 2023 EST"
                 },
                 "project": {
-                    "name": "Happy Meal Year",
-                    "link": "https://devpost.com/software/happy-meal-year"
+                    "name": "Noter",
+                    "link": "https://github.com/lads-hackathon/noter-hackbua23"
                 },
                 "awards": [
-                    "First Place"
+                    "Second Place"
                 ]
             },
             {
@@ -30,13 +30,29 @@
                     "link": "https://devpost.com/software/pet-finder-vh2y30"
                 },
                 "awards": []
+            },
+            {
+                "name": "See You Later, Hackulator 2",
+                "image": "https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/002/333/237/datas/large.png",
+                "type": "virtual",
+                "dates": {
+                    "from": "December 30, 2022 EST",
+                    "to": "January 1, 2023 EST"
+                },
+                "project": {
+                    "name": "Happy Meal Year",
+                    "link": "https://devpost.com/software/happy-meal-year"
+                },
+                "awards": [
+                    "First Place"
+                ]
             }
         ],
         "on_radar": []
     },
     "statistics": {
-        "won": 1,
-        "attended": 2,
-        "project_submitted": 2
+        "won": 2,
+        "attended": 3,
+        "project_submitted": 3
     }
 }
